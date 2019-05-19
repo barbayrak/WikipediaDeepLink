@@ -50,8 +50,10 @@ Here is the changes that i made in NSUserActivity+WMFExtension.m :
     NSUserActivity *activity = [self wmf_pageActivityWithName:@"Places"];
     
     NSMutableDictionary *userInfoDic = [[NSMutableDictionary alloc] initWithDictionary:activity.userInfo];
-    [userInfoDic setObject:latitude forKey:@"lat"];
-    [userInfoDic setObject:longtitude forKey:@"lon"];
+    if (latitude && longtitude) {
+        [userInfoDic setObject:latitude forKey:@"lat"];
+        [userInfoDic setObject:longtitude forKey:@"lon"];
+    }
     activity.userInfo = userInfoDic;
     
     activity.webpageURL = articleURL;
@@ -89,4 +91,34 @@ PlacesViewController.swift
         zoomAndPanMapView(toLocation: CLLocation(latitude: latitude.doubleValue, longitude: longtitude.doubleValue));
     }
 ```
+
+# Unit Tests
+There needs to be 2 steps for unit tests here, one for this app and one for Wikipedia app in order to fully test deep link from one app to another.
+
+Unit tests in Wikipedia app that i wrote : 
+
+```objective-c
+- (void)testPlacesURL {
+    NSURL *url = [NSURL URLWithString:@"wikipedia://places?lat=10.2&lon=-5.8"];
+    NSUserActivity *activity = [NSUserActivity wmf_activityForWikipediaScheme:url];
+    XCTAssertEqual(activity.wmf_type, WMFUserActivityTypePlaces);
+    XCTAssertEqualObjects(activity.wmf_lat, [NSNumber numberWithDouble:10.2]);
+    XCTAssertEqualObjects(activity.wmf_lon, [NSNumber numberWithDouble:-5.8]);
+}
+    
+- (void)testPlacesInvalidLatAndLon {
+    NSURL *url = [NSURL URLWithString:@"wikipedia://places?lat=10.2"];
+    NSUserActivity *activity = [NSUserActivity wmf_activityForWikipediaScheme:url];
+    XCTAssertEqual(activity.wmf_type, WMFUserActivityTypePlaces);
+    XCTAssertNil(activity.wmf_lat);
+    XCTAssertNil(activity.wmf_lon);
+}
+```
+
+Unit tests in this app :
+
+```swift
+
+```
+
 
