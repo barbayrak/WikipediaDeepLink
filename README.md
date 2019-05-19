@@ -118,7 +118,18 @@ Unit tests in Wikipedia app that i wrote :
 Unit tests in this app :
 
 ```swift
-
+    func testDeepLinkUrl(){
+        let urlString = locationVC.generateDeepLink(lat: 10.2, lon: -5.8)
+        XCTAssertEqual(urlString, "wikipedia://places?lat=10.2&lon=-5.8")
+    }
+    
+    func testDeepLinkValidity(){
+        let urlString = locationVC.generateDeepLink(lat: 10.2, lon: -5.8)
+        let url = URL(string: urlString)
+        XCTAssertNotNil(url)
+        let canOpenUrl = UIApplication.shared.canOpenURL(url!)
+        XCTAssertTrue(canOpenUrl)
+    }
 ```
 
 
