@@ -88,6 +88,11 @@ class LocationsViewController: UIViewController {
         self.tableView.reloadData()
     }
     
+    public func generateDeepLink(lat : Double , lon : Double) -> String {
+        let urlString = "wikipedia://places?lat=\(lat)&lon=\(lon)"
+        return urlString
+    }
+    
 }
 
 extension LocationsViewController : UISearchResultsUpdating {
@@ -105,9 +110,8 @@ extension LocationsViewController : UISearchResultsUpdating {
 extension LocationsViewController : UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let urlString = "wikipedia://places?lat=\(self.locations[indexPath.row].latitude)&lon=\(self.locations[indexPath.row].longtitude)"
+        let urlString = generateDeepLink(lat: self.locations[indexPath.row].latitude, lon: self.locations[indexPath.row].longtitude)
         guard let url = URL(string: urlString) else { return }
-        
         if(UIApplication.shared.canOpenURL(url)){
             UIApplication.shared.open(url, options: [:], completionHandler: nil)
         }else{

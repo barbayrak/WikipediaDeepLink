@@ -12,7 +12,18 @@
 		BB3FB0E022909EED00AC4370 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BB3FB0DF22909EED00AC4370 /* Assets.xcassets */; };
 		BB3FB0E322909EED00AC4370 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BB3FB0E122909EED00AC4370 /* LaunchScreen.storyboard */; };
 		BB3FB0EF2290A22000AC4370 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB3FB0EE2290A22000AC4370 /* Location.swift */; };
+		BB4F6B2B22918E4C0006F175 /* WikipediaDeepLinkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB4F6B2A22918E4C0006F175 /* WikipediaDeepLinkTests.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		BB4F6B2D22918E4C0006F175 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BB3FB0CD22909EEC00AC4370 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BB3FB0D422909EEC00AC4370;
+			remoteInfo = WikipediaDeepLink;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		BB3FB0D522909EEC00AC4370 /* WikipediaDeepLink.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WikipediaDeepLink.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -22,10 +33,20 @@
 		BB3FB0E222909EED00AC4370 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BB3FB0E422909EED00AC4370 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BB3FB0EE2290A22000AC4370 /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
+		BB4F6B2822918E4C0006F175 /* WikipediaDeepLinkTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WikipediaDeepLinkTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		BB4F6B2A22918E4C0006F175 /* WikipediaDeepLinkTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WikipediaDeepLinkTests.swift; sourceTree = "<group>"; };
+		BB4F6B2C22918E4C0006F175 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		BB3FB0D222909EEC00AC4370 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BB4F6B2522918E4C0006F175 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -46,6 +67,7 @@
 			isa = PBXGroup;
 			children = (
 				BB3FB0D722909EEC00AC4370 /* WikipediaDeepLink */,
+				BB4F6B2922918E4C0006F175 /* WikipediaDeepLinkTests */,
 				BB3FB0D622909EEC00AC4370 /* Products */,
 				3B7F6D55668B781B77E07714 /* Pods */,
 			);
@@ -55,6 +77,7 @@
 			isa = PBXGroup;
 			children = (
 				BB3FB0D522909EEC00AC4370 /* WikipediaDeepLink.app */,
+				BB4F6B2822918E4C0006F175 /* WikipediaDeepLinkTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -96,6 +119,15 @@
 			path = Application;
 			sourceTree = "<group>";
 		};
+		BB4F6B2922918E4C0006F175 /* WikipediaDeepLinkTests */ = {
+			isa = PBXGroup;
+			children = (
+				BB4F6B2A22918E4C0006F175 /* WikipediaDeepLinkTests.swift */,
+				BB4F6B2C22918E4C0006F175 /* Info.plist */,
+			);
+			path = WikipediaDeepLinkTests;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -116,6 +148,24 @@
 			productReference = BB3FB0D522909EEC00AC4370 /* WikipediaDeepLink.app */;
 			productType = "com.apple.product-type.application";
 		};
+		BB4F6B2722918E4C0006F175 /* WikipediaDeepLinkTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BB4F6B3122918E4C0006F175 /* Build configuration list for PBXNativeTarget "WikipediaDeepLinkTests" */;
+			buildPhases = (
+				BB4F6B2422918E4C0006F175 /* Sources */,
+				BB4F6B2522918E4C0006F175 /* Frameworks */,
+				BB4F6B2622918E4C0006F175 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BB4F6B2E22918E4C0006F175 /* PBXTargetDependency */,
+			);
+			name = WikipediaDeepLinkTests;
+			productName = WikipediaDeepLinkTests;
+			productReference = BB4F6B2822918E4C0006F175 /* WikipediaDeepLinkTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -128,6 +178,10 @@
 				TargetAttributes = {
 					BB3FB0D422909EEC00AC4370 = {
 						CreatedOnToolsVersion = 10.2.1;
+					};
+					BB4F6B2722918E4C0006F175 = {
+						CreatedOnToolsVersion = 10.2.1;
+						TestTargetID = BB3FB0D422909EEC00AC4370;
 					};
 				};
 			};
@@ -145,6 +199,7 @@
 			projectRoot = "";
 			targets = (
 				BB3FB0D422909EEC00AC4370 /* WikipediaDeepLink */,
+				BB4F6B2722918E4C0006F175 /* WikipediaDeepLinkTests */,
 			);
 		};
 /* End PBXProject section */
@@ -156,6 +211,13 @@
 			files = (
 				BB3FB0E322909EED00AC4370 /* LaunchScreen.storyboard in Resources */,
 				BB3FB0E022909EED00AC4370 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BB4F6B2622918E4C0006F175 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -172,7 +234,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		BB4F6B2422918E4C0006F175 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BB4F6B2B22918E4C0006F175 /* WikipediaDeepLinkTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		BB4F6B2E22918E4C0006F175 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BB3FB0D422909EEC00AC4370 /* WikipediaDeepLink */;
+			targetProxy = BB4F6B2D22918E4C0006F175 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		BB3FB0E122909EED00AC4370 /* LaunchScreen.storyboard */ = {
@@ -338,6 +416,44 @@
 			};
 			name = Release;
 		};
+		BB4F6B2F22918E4C0006F175 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = WikipediaDeepLinkTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.wikipedia.test.WikipediaDeepLinkTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WikipediaDeepLink.app/WikipediaDeepLink";
+			};
+			name = Debug;
+		};
+		BB4F6B3022918E4C0006F175 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = WikipediaDeepLinkTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.wikipedia.test.WikipediaDeepLinkTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WikipediaDeepLink.app/WikipediaDeepLink";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -355,6 +471,15 @@
 			buildConfigurations = (
 				BB3FB0E822909EED00AC4370 /* Debug */,
 				BB3FB0E922909EED00AC4370 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BB4F6B3122918E4C0006F175 /* Build configuration list for PBXNativeTarget "WikipediaDeepLinkTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BB4F6B2F22918E4C0006F175 /* Debug */,
+				BB4F6B3022918E4C0006F175 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
